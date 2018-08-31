@@ -11,7 +11,7 @@
 * model/im2txt
 
 # 测试过程中填“坑”
-（1） word_counts.txt文件的处理，需要将文件中的 b' str'  ==>  str，即把字符串的引号等全部去掉。去掉了 引号 by Ethan 
+（1） word_counts.txt文件的处理，需要将文件中的 b' str'  ==>  str，即把字符串的引号等全部去掉。去掉了 引号 by Ethan
 
 
 （2）修改预训练模型中的名称，由于预训练模型的名称不一致的问题，所以需要进行修改。
@@ -43,9 +43,9 @@ def RenameCkpt():
 
 
 -----------------------------------------------
-Tool version :
-python 3.6.2 Anaconda
-tf.__version__ 1.3.0
+## Tool version :
+* python 3.6.2 Anaconda
+* tf.__version__ 1.3.0
 
 new dig hold:
 1.UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
