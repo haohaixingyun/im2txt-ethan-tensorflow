@@ -85,7 +85,7 @@ def main(_):
 FLAGS.checkpoint_path = "D:/sthself/ml/RNN/im2txt/im2txt_2016_10_11.2000000/newmodel.ckpt-2000000"
 
 FLAGS.vocab_file = "./data/volab.txt"
-FLAGS.input_files = "./data/COCO_val2014_000000224477.jpg,./data/ep271.jpg,./data/dog.jpg,./data/beauty.jpg,./data/bethan.jpg,./data/sharon.jpg,./data/games.jpg,./data/sharon1.jpg,./data/sharon3.jpg,./data/brotheryong1.jpg,./data/liangyishi.jpg,./data/desk.jpg"
+FLAGS.input_files = "./data/bug.jpg,./data/bug2.jpg,./data/bug1.jpg,./data/COCO_val2014_000000224477.jpg,./data/ep271.jpg,./data/dog.jpg,./data/beauty.jpg,./data/bethan.jpg,./data/sharon.jpg,./data/games.jpg,./data/sharon1.jpg,./data/sharon3.jpg,./data/brotheryong1.jpg,./data/liangyishi.jpg,./data/desk.jpg"
 
 # 由于版本不同，需要进行修改
 def RenameCkpt():
