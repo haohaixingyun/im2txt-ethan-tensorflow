@@ -108,3 +108,11 @@ new dig hold:
   0) a man sitting at a table with a laptop . (概率=0.000382)
   1) a man sitting on a chair in a room . (概率=0.000313)
   2) a man sitting at a table with a laptop computer . (概率=0.000224)
+  
+  
+  ___________________________________
+  
+  I will upload the pre-trained modle to baidu pan for in case you need later !
+  
+  The path:: 
+   
