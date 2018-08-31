@@ -1,24 +1,24 @@
 # 谷歌图像叙事功能
-基于tensorflow 1.0实现im2txt。也可见博客地址：[CSDN博客](http://blog.csdn.net/sparkexpert/article/details/70846094)
+基于tensorflow 1.0实现im2txt。  comments 原来的模型使用的tf 版本过低，我本地鸡使用的是1.3.0  change some codes
 
 # 预训练模型下载
-由于本人实验环境相对较差，没有GPU，所以没有测试训练过程。因此下载了个预训练模型。
+由于本人实验环境相对较差，没有GPU，所以没有测试训练过程。因此下载了个预训练模型。 comments  ，看githup 上 训练模型需要1-2 weeks ,哥哥直接放弃
 下载地址如下所示：https://drive.google.com/file/d/0Bw6m_66JSYLlRFVKQ2tGcUJaWjA/view
 
 ### 运行环境介绍
 * Python 3.6
-* Tensorflow >= 1.0.1
+* Tensorflow >= 1.0.1  ----> 1.3.0
 * model/im2txt
 
 # 测试过程中填“坑”
-（1） word_counts.txt文件的处理，需要将文件中的 b' str'  ==>  str，即把字符串的引号等全部去掉。
+（1） word_counts.txt文件的处理，需要将文件中的 b' str'  ==>  str，即把字符串的引号等全部去掉。去掉了 引号 by Ethan 
 
 
 （2）修改预训练模型中的名称，由于预训练模型的名称不一致的问题，所以需要进行修改。
 
 在具体代码修改中，添加一个函数来进行模型的修改和重新保存
 
-# 由于版本不同，需要进行修改
+# 由于版本不同，需要进行修改  -----这个地方在code 中做了修改
 def RenameCkpt():
     vars_to_rename = {
     "lstm/BasicLSTMCell/Linear/Matrix": "lstm/basic_lstm_cell/weights",
@@ -41,26 +41,6 @@ def RenameCkpt():
       saver.save(sess, "/home/ndscbigdata/work/change/tf/gan/im2txt/ckpt/newmodel.ckpt-2000000")
     print("checkpoint file rename successful... ")
 
-# 训练结果：
-	图片放在data目录下:
-	![[image](./data/COCO_val2014_000000224477.jpg)]
-图像 COCO_val2014_000000224477.jpg 标题是:
-  0) a man riding a wave on top of a surfboard . (概率=0.035672)
-  1) a person riding a surf board on a wave (概率=0.016238)
-  2) a man on a surfboard riding a wave . (概率=0.010146)
-  
-	![[image](./data/ep271.jpg)]
-图像 ep271.jpg 标题是:
-  0) a woman is standing next to a horse . (概率=0.000759)
-  1) a woman is standing next to a horse (概率=0.000647)
-  2) a woman is standing next to a brown horse . (概率=0.000384)
-  
-	![[image](./data/dog.jpg)]
-图像 dog.jpg 标题是:
-  0) a dog is eating a slice of pizza . (概率=0.000138)
-  1) a dog is eating a slice of pizza on a plate . (概率=0.000047)
-  2) a dog is sitting at a table with a pizza on it . (概率=0.000039)
-
 
 -----------------------------------------------
 Tool version :
@@ -71,6 +51,8 @@ new dig hold:
 1.UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
 
 2.tensorflow version 1.3  lstm 转换
+
+# 训练结果：
 
 图像 COCO_val2014_000000224477.jpg 标题是:
   0) a man riding a wave on top of a surfboard . (概率=0.035689)
